@@ -1,0 +1,22 @@
+.mw__container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 100%;
+}
+
+.mw__heading {
+  font-weight: 700;
+  text-align: center;
+  flex: 0;
+  background-color: var(--light-accent-faded);
+  border-bottom: 1px dotted var(--black-color);
+}
+
+.mw__content {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex: 1;
+}
