@@ -1,0 +1,29 @@
+.arw__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.arw__heading {
+  font-style: italic;
+}
+
+.arw__item {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px dotted var(--black-color);
+}
+
+.arw__item:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.arw__left {
+  flex: 0.4;
+}
+
+.arw__right {
+  flex: 0.6;
+}

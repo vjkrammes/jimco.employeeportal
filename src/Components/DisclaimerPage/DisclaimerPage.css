@@ -1,0 +1,4 @@
+.fixedfont {
+  font-family: 'Space Mono', 'Courier New', Courier, monospace;
+  color: var(--dark-color);
+}

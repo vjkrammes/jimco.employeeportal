@@ -1,0 +1,21 @@
+.mainpage {
+  display: grid;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: auto;
+  gap: 10px;
+}
+
+.mp__menuitem {
+  height: 200px;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
+}
+
+.mp__menuitem > a {
+  width: 100%;
+}
+
+.mp__notices {
+  grid-column: 1 / -1;
+  background-color: var(--warning-color-faded);
+}

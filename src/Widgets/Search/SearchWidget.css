@@ -1,0 +1,26 @@
+.sw__container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: flex-end;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 1rem;
+  padding-inline: 5px;
+}
+
+.sw__title {
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  padding: 2px 3px;
+  flex: 1;
+}
+
+.sw__buttoncontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-around;
+}

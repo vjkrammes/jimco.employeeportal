@@ -1,0 +1,23 @@
+.asw__container {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+}
+
+.asw__info {
+  margin-left: 5px;
+  text-align: left;
+  grid-row: 1;
+  grid-column: 1 / 1;
+}
+
+.asw__button {
+  grid-row: 1;
+  grid-column: 2 / -1;
+  max-height: 90%;
+  margin: 3px 5px;
+}

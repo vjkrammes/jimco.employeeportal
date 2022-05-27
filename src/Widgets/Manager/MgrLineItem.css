@@ -1,0 +1,41 @@
+.mli__container {
+  display: grid;
+  grid-template-columns: minmax(0, 20px) repeat(10, minmax(0, 78px));
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'ager name name name name name name quan prce .... btns'
+    '.... mfgr mfgr mfgr mfgr mfgr mfgr stdt stdt stat stat';
+  align-items: center;
+  border-bottom: 1px dotted var(--base-color);
+  margin-bottom: 10px;
+}
+
+.mli__name {
+  grid-area: name;
+  font-weight: 700;
+}
+
+.mli__quantity {
+  grid-area: quan;
+}
+
+.mli__price {
+  text-align: right;
+  grid-area: prce;
+}
+
+.mli__buttoncontainer {
+  grid-area: btns;
+}
+
+.mli__manufacturer {
+  grid-area: mfgr;
+}
+
+.mli__statusdate {
+  grid-area: stdt;
+}
+
+.mli__status {
+  grid-area: stat;
+}

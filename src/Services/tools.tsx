@@ -6,6 +6,7 @@ import {
   FaUserSecret,
   FaStoreAlt,
 } from 'react-icons/fa';
+import { IUserModel } from '../Interfaces/IUserModel';
 
 export function prettify(json: string, indent: number = 2): string {
   if (json) {
@@ -247,4 +248,34 @@ export function getAudience(
       {!a && <span>&nbsp;</span>}
     </div>
   );
+}
+
+export function userHasRole(user: IUserModel, role: string): boolean {
+  const r = role.toLowerCase();
+  const roles = user.jobTitles.toLowerCase();
+  return roles.indexOf(r) >= 0;
+}
+
+export function userIsVendor(user: IUserModel): boolean {
+  return userHasRole(user, 'vendor');
+}
+
+export function userIsEmployee(user: IUserModel): boolean {
+  return userHasRole(user, 'employee');
+}
+
+export function userIsManager(user: IUserModel): boolean {
+  return userHasRole(user, 'manager');
+}
+
+export function userIsAdmin(user: IUserModel): boolean {
+  return userHasRole(user, 'admin');
+}
+
+export function userIsManagerPlus(user: IUserModel): boolean {
+  return userIsManager(user) || userIsAdmin(user);
+}
+
+export function userIsJimCoEmployee(user: IUserModel): boolean {
+  return userIsEmployee(user) || userIsManager(user) || userIsAdmin(user);
 }

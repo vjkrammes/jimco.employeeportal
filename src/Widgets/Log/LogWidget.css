@@ -1,0 +1,50 @@
+.lw__container {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'date date levl desc desc desc desc btns'
+    'addr addr srce srce srce idnt idnt idnt';
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px dotted var(--base-color);
+}
+
+.lw__timestamp {
+  grid-area: date;
+}
+
+.lw__level {
+  grid-area: levl;
+  font-style: italic;
+}
+
+.lw__source,
+.lw__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lw__source {
+  grid-area: srce;
+}
+
+.lw__buttoncontainer {
+  width: 100%;
+  grid-area: btns;
+  justify-content: flex-end;
+}
+
+.lw__ip {
+  grid-area: addr;
+}
+
+.lw__description {
+  grid-area: desc;
+}
+
+.lw__identifier {
+  grid-area: idnt;
+}

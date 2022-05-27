@@ -1,0 +1,49 @@
+.mow__container {
+  display: grid;
+  grid-template-columns: repeat(20, minmax(0px, 1fr));
+  grid-template-rows: 1fr min-content;
+  grid-template-areas:
+    'date date name name name name emla emla emla emla stat stat stat stat totl totl totl btns btns btns'
+    '.... .... addr addr addr addr addr addr addr addr addr addr addr addr addr addr numi numi ageb ageb';
+  gap: 10px;
+  align-items: center;
+  padding-top: 5px;
+  border-bottom: 1px dotted var(--base-color);
+}
+
+.mow__date {
+  grid-area: date;
+}
+
+.mow__name {
+  grid-area: name;
+  font-style: italic;
+}
+
+.mow__email {
+  grid-area: emla;
+}
+
+.mow__name,
+.mow__email {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mow__status {
+  grid-area: stat;
+}
+
+.mow__status form {
+  width: 150px;
+}
+
+.mow__price {
+  grid-area: totl;
+  text-align: right;
+}
+
+.mow__buttoncontainer {
+  grid-area: btns;
+}

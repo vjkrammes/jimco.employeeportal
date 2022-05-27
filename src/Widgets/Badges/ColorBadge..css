@@ -1,0 +1,19 @@
+.cb__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.cb__swatch {
+  width: 40px;
+  height: 1rem;
+  margin-left: 10px;
+  border: 1px solid var(--black-color);
+}
+
+.cb__name {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

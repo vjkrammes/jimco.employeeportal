@@ -1,0 +1,94 @@
+.ciw__container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'qnty name name name name name name name extd extd'
+    'porm mfgr mfgr mfgr mfgr mfgr prce prce ager delb';
+  align-items: center;
+  grid-column-gap: 5px;
+  border-bottom: 1px dotted var(--base-color);
+}
+
+.ciw__quantity {
+  grid-area: qnty;
+  text-align: right;
+}
+
+.ciw__name {
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.ciw__price {
+  grid-area: prce;
+  text-align: right;
+}
+
+.ciw__extend {
+  grid-area: extd;
+  text-align: right;
+}
+
+.ciw__qbuttons {
+  grid-area: porm;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+
+.ciw__button {
+  padding: 1px 3px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  line-height: 0.75rem;
+  background-color: var(--primarybutton-background);
+  color: var(--primarybutton-color);
+  cursor: pointer;
+}
+
+.ciw__button:hover {
+  background-color: var(--primarybutton-hover-background);
+  color: var(--primarybutton-hover-color);
+}
+
+.ciw__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ciw__button span {
+  font-size: 50%;
+}
+
+.ciw__mfgr {
+  grid-area: mfgr;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+.ciw__agereq {
+  grid-area: ager;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ciw__icon img {
+  height: 16px;
+}
+
+.ciw__delete {
+  grid-area: delb;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}

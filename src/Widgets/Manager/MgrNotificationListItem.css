@@ -1,0 +1,62 @@
+.mnli__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mnli__body {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.mnli__icon img {
+  width: 16px;
+}
+
+.mnli__audience {
+  display: grid;
+  grid-template-columns: repeat(4, 20px);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.mnli__author {
+  font-style: italic;
+}
+
+.mnli__title {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.mnli__buttoncontainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mnli__button {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+  line-height: 1.25rem;
+  margin-bottom: 3px;
+}
+
+.mnli__text {
+  margin-inline: 4rem;
+  border: 1px dotted var(--base-color);
+  padding: 10px;
+  font-style: italic;
+  background-color: var(--light-color-faded);
+}

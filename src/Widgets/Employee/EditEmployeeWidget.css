@@ -1,0 +1,110 @@
+.eew__container {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: 24px 40px 40px 40px 24px;
+  grid-template-areas:
+    'titl titl titl titl titl titl titl titl titl titl'
+    'flab fnam fnam fnam fnam llab lnam lnam lnam lnam'
+    'dlab dnam dnam dnam dnam elab emla emla emla emla'
+    'vtik etik mtik atik .... .... sbtn sbtn cbtn cbtn'
+    'htxt htxt htxt htxt htxt htxt htxt htxt htxt htxt';
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  align-items: center;
+}
+
+.eew__noemployee {
+  font-style: italic;
+  text-align: center;
+  margin-top: 4.5rem;
+}
+
+.eew__title {
+  grid-area: titl;
+  font-style: italic;
+  text-align: center;
+}
+
+.eew__firstlabel {
+  grid-area: flab;
+}
+
+.eew__firstnameinput {
+  grid-area: fnam;
+}
+
+.eew__lastlabel {
+  grid-area: llab;
+}
+
+.eew__lastnameinput {
+  grid-area: lnam;
+}
+
+.eew__displaylabel {
+  grid-area: dlab;
+}
+
+.eew__displayinput {
+  grid-area: dnam;
+}
+
+.eew__emaillabel {
+  grid-area: elab;
+}
+
+.eew__emailinput {
+  grid-area: emla;
+}
+
+.eew__vendortick {
+  grid-area: vtik;
+}
+
+.eew__employeetick {
+  grid-area: etik;
+}
+
+.eew__managertick {
+  grid-area: mtik;
+}
+
+.eew__admintick {
+  grid-area: atik;
+}
+
+.eew__cancelbutton {
+  grid-area: cbtn;
+}
+
+.eew__savebutton {
+  grid-area: sbtn;
+}
+
+.eew__button {
+  padding: 3px 5px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 75%;
+}
+
+.eew__button:hover {
+  background-color: var(--light-color);
+  color: var(--black-color);
+}
+
+.eew__button span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+.eew__helptext {
+  grid-area: htxt;
+  font-style: italic;
+  font-size: 60%;
+}

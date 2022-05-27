@@ -1,0 +1,23 @@
+.ap__aboutitem {
+  list-style-type: square;
+}
+
+.ap__container p {
+  margin-bottom: 1rem;
+}
+
+.ap__container p:last-of-type {
+  margin-bottom: 0;
+}
+
+.ap__container * a {
+  border: 1px solid var(--light-accent);
+  padding: 1px 3px;
+  text-decoration: none;
+  color: var(--dark-color);
+}
+
+.ap__container * a:hover {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+}

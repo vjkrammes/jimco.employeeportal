@@ -1,0 +1,147 @@
+.cw__container {
+  margin-bottom: 1rem;
+}
+
+.cw__categorycontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-inline: 5px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  display: flex;
+  cursor: pointer;
+}
+
+.cw__icon img {
+  height: 16px;
+}
+
+.cw__name {
+  flex: 1;
+  margin-inline: 10px;
+}
+
+.cw__editbutton {
+  margin-left: 5px;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
+  padding: 1px 3px;
+  background-color: var(--base-color);
+  color: var(--white-color);
+  font-size: 75%;
+  height: 1.25rem;
+}
+
+.cw__editbutton:hover {
+  background-color: var(--light-color);
+  color: var(--black-color);
+}
+
+.cw__modal {
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px var(--dark-color);
+  max-width: 500px;
+  padding: 3rem 4rem;
+}
+
+.cw__modal::backdrop {
+  background-color: rgba(0, 48, 90, 0.4);
+}
+
+.cw__modalcontent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.cw__modaltitle {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid var(--base-color);
+  margin-bottom: 1rem;
+}
+
+.cw__modalbody {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.cw__modalbody img {
+  height: 64px;
+  width: 64px;
+  object-fit: contain;
+}
+
+.cw__modalmessage {
+  font-style: italic;
+}
+
+.cw__editcontainer {
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
+  padding: 1rem 0.5rem;
+}
+
+.cw__formbody {
+  display: grid;
+  align-items: center;
+  row-gap: 5px;
+  column-gap: 5px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    'namel namev namev namev namev namev'
+    'iconl iconv iconv backl backv backv'
+    'iarl  iarl  iarv  arl   arl   arv'
+    'btnc  btnc  btnc  btnc  btnc  btnc';
+}
+
+.cw__namelabel {
+  grid-area: namel;
+}
+
+.cw__nameinput {
+  grid-area: namev;
+}
+
+.cw__imagelabel {
+  grid-area: iconl;
+}
+
+.cw__imageselect {
+  grid-area: iconv;
+}
+
+.cw__backlabel {
+  grid-area: backl;
+}
+
+.cw__backselect {
+  grid-area: backv;
+}
+
+.cw__iarlabel {
+  grid-area: iarl;
+}
+
+.cw__iarcheckbox {
+  grid-area: iarv;
+}
+
+.cw__arlabel {
+  grid-area: arl;
+}
+
+.cw__arinput {
+  grid-area: arv;
+}
+
+.cw__buttoncontainer {
+  grid-area: btnc;
+}

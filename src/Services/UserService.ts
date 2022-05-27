@@ -1,14 +1,12 @@
 import { http, HttpResponse } from './http';
-import { useAuth0 } from '@auth0/auth0-react';
 import { IUserModel } from '../Interfaces/IUserModel';
 import { IChangeProfileModel } from '../Interfaces/IChangeProfileModel';
 import { IApiResponse } from '../Interfaces/IApiResponse';
 
-export async function GetUsers(): Promise<IUserModel[]> {
-  const { getAccessTokenSilently } = useAuth0();
+export async function getUsers(token: string): Promise<IUserModel[]> {
   const response = await http<IUserModel[]>({
     path: '/User',
-    token: await getAccessTokenSilently(),
+    token: token,
   });
   if (response && response.ok && response.body) {
     return response.body;
@@ -16,7 +14,7 @@ export async function GetUsers(): Promise<IUserModel[]> {
   return [];
 }
 
-export async function GetUserModel(
+export async function getUserModel(
   email: string,
   identifier: string,
   token?: string,
@@ -69,24 +67,26 @@ export async function GetUserModel(
   return null;
 }
 
-export async function CreateUser(
+export async function createUser(
   user: IUserModel,
+  token: string,
 ): Promise<HttpResponse<IUserModel | IApiResponse>> {
-  const { getAccessTokenSilently } = useAuth0();
   const response = await http<IUserModel | IApiResponse, IUserModel>({
     path: '/User',
     method: 'post',
     body: user,
-    token: await getAccessTokenSilently(),
+    token: token,
   });
   return response;
 }
 
-export async function GetNameFromEmail(email: string): Promise<string> {
-  const { getAccessTokenSilently } = useAuth0();
+export async function getNameFromEmail(
+  email: string,
+  token: string,
+): Promise<string> {
   const response = await http<string>({
     path: `/User/Name/email/${email}`,
-    token: await getAccessTokenSilently(),
+    token: token,
   });
   if (response && response.ok && response.body) {
     return response.body;
@@ -94,13 +94,13 @@ export async function GetNameFromEmail(email: string): Promise<string> {
   return '';
 }
 
-export async function GetNameFromIdentifier(
+export async function getNameFromIdentifier(
   identifier: string,
+  token: string,
 ): Promise<string> {
-  const { getAccessTokenSilently } = useAuth0();
   const response = await http<string>({
     path: `/User/Name/identifier/${identifier}`,
-    token: await getAccessTokenSilently(),
+    token: token,
   });
   if (response && response.ok && response.body) {
     return response.body;
@@ -108,15 +108,15 @@ export async function GetNameFromIdentifier(
   return '';
 }
 
-export async function UpdateUserModel(
+export async function updateUserModel(
   model: IChangeProfileModel,
+  token: string,
 ): Promise<HttpResponse<any>> {
-  const { getAccessTokenSilently } = useAuth0();
   const response = await http<any, IChangeProfileModel>({
     path: '/User/UpdateProfile',
     method: 'put',
     body: model,
-    token: await getAccessTokenSilently(),
+    token: token,
   });
   return response;
 }

@@ -1,0 +1,51 @@
+.ew__container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-template-areas: 'rb nn nn nn bc bc';
+  margin-top: 5px;
+  border-bottom: 1px dotted var(--dark-color);
+}
+
+.ew__roles {
+  grid-area: rb;
+}
+
+.ew__name {
+  grid-area: nn;
+  font-style: italic;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ew__buttoncontainer {
+  grid-area: bc;
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  justify-self: flex-end;
+}
+
+.ew__button {
+  padding: 1px 3px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+  font-size: 75%;
+  height: 90%;
+}
+
+.ew__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ew__button span {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}

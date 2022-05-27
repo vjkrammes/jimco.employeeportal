@@ -1,0 +1,21 @@
+.cnw__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.cnw__image {
+  height: 16px;
+  width: 16px;
+  flex: 0;
+}
+
+.cnw__name {
+  flex: 1;
+}
+
+.cns__age {
+  flex: 0;
+}

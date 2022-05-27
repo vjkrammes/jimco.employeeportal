@@ -1,0 +1,66 @@
+.h__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 2rem;
+}
+
+.h__logo {
+  margin-left: 10px;
+}
+
+.h__logoimage {
+  max-height: 2rem;
+}
+
+.h__welcome {
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.h__name {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.h__linkcontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-right: 10px;
+}
+
+.h__buttoncontainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+  .h__container {
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: 1fr;
+  }
+
+  .h__logo {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+  }
+
+  .h__welcome {
+    grid-column: 1 / 11;
+    grid-row: 1 / 1;
+    justify-self: center;
+  }
+
+  .h__linkcontainer {
+    justify-self: flex-end;
+    grid-column: 8 / 11;
+    grid-row: 1 / 1;
+  }
+}
