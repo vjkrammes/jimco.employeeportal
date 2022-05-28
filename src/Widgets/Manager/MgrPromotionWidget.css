@@ -1,0 +1,62 @@
+.mpromow__container {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: min-content 1fr;
+  grid-template-areas:
+    'eb ic sd sd sd ed ed ed ds ds ds ds ds ds ds pr pr bc bc bc'
+    '.. .. ci ci ci ci ci ci ci ci ci ci ci ci ci ci ci ci ci ci'
+    '.. .. cn cn cn cn cn cn cn cn cn cn cn cn cn cn cn cn cn cn'
+    '.. .. lq lq lq lq lq lq lq lq lq lq lq lq lq lq lq lq lq lq';
+  align-items: center;
+  border-bottom: 1px dotted var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.mpromow__expand {
+  grid-area: eb;
+}
+
+.mpromow__icon {
+  grid-area: ic;
+  justify-self: center;
+}
+
+.mpromow__icon img {
+  height: 16px;
+  width: 16px;
+}
+
+.mpromow__start {
+  grid-area: sd;
+}
+
+.mpromow__stop {
+  grid-area: ed;
+}
+
+.mpromow__description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  grid-area: ds;
+}
+
+.mpromow__price {
+  grid-area: pr;
+}
+
+.mpromow__buttoncontainer {
+  grid-area: bc;
+}
+
+.mpromow__created {
+  grid-area: ci;
+}
+
+.mpromow__canceled {
+  grid-area: cn;
+}
+
+.mpromow__limited {
+  grid-area: lq;
+}

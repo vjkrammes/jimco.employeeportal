@@ -1,0 +1,10 @@
+#sp__modal {
+  max-width: 800px;
+}
+
+.sp__modalcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}

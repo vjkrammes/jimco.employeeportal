@@ -1,0 +1,61 @@
+.copw__container {
+  display: grid;
+  grid-template-columns: min-content, repeat(9, 1fr);
+  gap: 2px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    'icon name name name name name name ager prce prce'
+    '.... desc desc desc desc desc desc desc desc bttn';
+  align-items: center;
+  padding: 3px;
+  margin-top: 10px;
+}
+
+.copw__icon {
+  grid-area: icon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copw__icon img {
+  width: 16px;
+  height: 16px;
+}
+
+.copw__name {
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copw__agerequired {
+  grid-area: ager;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.agebadge__icon img {
+  height: 16px;
+}
+
+.copw__price {
+  grid-area: prce;
+  text-align: right;
+}
+
+.copw__description {
+  grid-area: desc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.copw__button {
+  grid-area: bttn;
+  justify-self: flex-end;
+}

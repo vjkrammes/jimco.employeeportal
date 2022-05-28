@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { MdLogin, MdLogout, MdSettings } from 'react-icons/md';
 import { useUser } from '../../Contexts/UserContext';
-import RoleBadge from '../../Widgets/RoleBadge/RoleBadge';
+import RoleBadge from '../../Widgets/Badges/RoleBadge';
 import Spinner from '../../Widgets/Spinner/Spinner';
 import './Header.css';
 

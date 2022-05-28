@@ -17,7 +17,7 @@ export async function getProductById(id: string): Promise<IProduct | null> {
 export async function getProductBySku(sku: string): Promise<IProduct | null> {
   if (sku) {
     const response = await http<IProduct | null>({
-      path: `/Product/BySky/${sku}`,
+      path: `/Product/BySku/${sku}`,
     });
     if (response && response.ok && response.body) {
       return response.body;

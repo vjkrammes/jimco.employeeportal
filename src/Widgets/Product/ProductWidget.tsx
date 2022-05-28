@@ -2,6 +2,7 @@ import { IProduct } from '../../Interfaces/IProduct';
 import HideWidget from '../Hide/HideWidget';
 import { toCurrency } from '../../Services/tools';
 import { getHex } from '../../Services/ColorService';
+import './ProductWidget.css';
 
 type Props = {
   product: IProduct;

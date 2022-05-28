@@ -1,0 +1,119 @@
+.mvw__container {
+  display: grid;
+  grid-template-columns: repeat(18, 44px);
+  grid-template-rows: min-content auto;
+  grid-template-areas:
+    'name name name name cntx cntx cntx cntx emla emla emla emla phon phon phon detb edtb delb'
+    'addr addr addr addr addr addr addr addr addr addr addr addr addr addr addr addr addr addr'
+    'faxl faxn faxn .... .... .... .... .... .... .... uel  uel  uel  ue   hvrl hvrl hvrl hvrv';
+  border-bottom: 1px dotted var(--dark-color);
+  margin-bottom: 1rem;
+  padding-bottom: 10px;
+}
+
+.mvw__truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mvw__name {
+  grid-area: name;
+}
+
+.mvw__contact {
+  grid-area: cntx;
+}
+
+.mvw__email {
+  grid-area: emla;
+}
+
+.mvw__phone {
+  grid-area: phon;
+}
+
+.mvw__button {
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+  max-height: 90%;
+  margin-right: 3px;
+  width: 2rem;
+}
+
+.mvw__button:last-of-type {
+  margin-right: 0;
+}
+
+.mvw__button:hover {
+  background-color: var(--light-color);
+  color: var(--black-color);
+}
+
+.mvw__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mvw__detailsbutton {
+  grid-area: detb;
+}
+
+.mvw__editbutton {
+  grid-area: edtb;
+}
+
+.mvw__deletebutton {
+  background-color: var(--error-color);
+  grid-area: delb;
+}
+
+.mvw__noaddress {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.mvw__address {
+  font-style: italic;
+  grid-area: addr;
+}
+
+.mvw__faxlabel {
+  grid-area: faxl;
+}
+
+.mvw__fax {
+  grid-area: faxn;
+}
+
+.mvw__hvrlabel {
+  grid-area: hvrl;
+}
+
+.mvw__uelabel {
+  grid-area: uel;
+}
+
+.mvw__ue {
+  grid-area: ue;
+  display: flex;
+  align-items: center;
+}
+
+.mvw__hvr {
+  grid-area: hvrv;
+  display: flex;
+  align-items: center;
+}
+
+.mvw__ue img,
+.mvw__hvr img {
+  width: 16px;
+  height: 16px;
+}

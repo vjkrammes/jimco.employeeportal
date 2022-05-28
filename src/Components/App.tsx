@@ -6,6 +6,8 @@ import ArchitecturePage from './AboutPage/ArchitecturePage';
 import DisclaimerPage from './DisclaimerPage/DisclaimerPage';
 import HomePage from './HomePage/HomePage';
 import MainPage from './MainPage/MainPage';
+import NotFoundPage from './NotFoundPage/NotFoundPage';
+import SearchPage from './SearchPage/SearchPage';
 // providers
 import { AlertProvider } from '../Contexts/AlertContext';
 import { UserProvider } from '../Contexts/UserContext';
@@ -55,6 +57,12 @@ function App() {
                     </>
                   }
                 />
+                <Route
+                  path="/Search/:category/:text"
+                  element={<SearchPage />}
+                />
+                <Route path="/Search/:text" element={<SearchPage />} />
+                <Route path="*" element={<NotFoundPage />} />
               </Routes>
             </div>
           </main>

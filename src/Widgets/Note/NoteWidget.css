@@ -1,0 +1,136 @@
+.nw__container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, calc(180 / 7));
+  grid-template-areas:
+    'titl titl titl titl titl titl titl titl titl titl'
+    'from from from to   to   to   lvll lsel lsel lsel'
+    'subl subj subj subj subj subj subj subj subj subj'
+    'text text text text text text text text text text'
+    'text text text text text text text text text text'
+    'text text text text text text text text text text'
+    'venp venp empp empp mgrp mgrp admp admp rstb crtb';
+  column-gap: 5px;
+  row-gap: 5px;
+  align-items: center;
+}
+
+.nw__title {
+  grid-area: titl;
+  justify-self: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nw__button {
+  padding: 3px 5px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.nw__smallerbutton {
+  font-size: 75%;
+}
+
+.nw__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nw__button span {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}
+
+.nw__managebuttoncontainer {
+  grid-row: 1 / 1;
+  grid-column: 10 / 11;
+}
+
+.nw__from,
+.nw__to,
+.nw__subject {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.nw__label {
+  flex: 0;
+}
+
+.nw__frompicker,
+.nw__topicker,
+.nw__subjectinput {
+  flex: 1;
+}
+
+.nw__from {
+  grid-area: from;
+}
+
+.nw__to {
+  grid-area: to;
+}
+
+.nw__levellabel {
+  grid-area: lvll;
+}
+
+.nw__levelselect {
+  grid-area: lsel;
+}
+
+.nw__subject {
+  grid-area: subj;
+}
+
+.nw__textinput {
+  grid-area: text;
+}
+
+.nw__textinput textarea {
+  resize: none;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 50px;
+}
+
+.nw__vendortick {
+  grid-area: venp;
+}
+
+.nw__employeetick {
+  grid-area: empp;
+}
+
+.nw__managertick {
+  grid-area: mgrp;
+}
+
+.nw__admintick {
+  grid-area: admp;
+}
+
+#nw__resetbutton,
+#nw__createbutton {
+  font-size: 75%;
+}
+
+.nw__resetbutton {
+  grid-area: rstb;
+}
+
+.nw__createbutton {
+  grid-area: crtb;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

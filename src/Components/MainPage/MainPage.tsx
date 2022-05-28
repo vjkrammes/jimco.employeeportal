@@ -6,9 +6,9 @@ import { IAlertIdentity } from '../../Interfaces/IAlertIdentity';
 import { IAlertResponse } from '../../Interfaces/IAlertResponse';
 import { getAlerts } from '../../Services/AlertService';
 import MenuWidget from '../../Widgets/Menu/MenuWidget';
-import SearchWidget from '../../Widgets/SearchWidget/SearchWidget';
-import SkuSearchWidget from '../../Widgets/SkuSearchWidget/SkuSearchWidget';
-import AlertSummaryWidget from '../../Widgets/AlertSummary/AlertSummaryWidget';
+import SearchWidget from '../../Widgets/Search/SearchWidget';
+import SkuSearchWidget from '../../Widgets/Search/SkuSearchWidget';
+import AlertSummaryWidget from '../../Widgets/Alert/AlertSummaryWidget';
 import './MainPage.css';
 
 export default function MainPage() {

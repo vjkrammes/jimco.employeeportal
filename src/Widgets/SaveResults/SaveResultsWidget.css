@@ -1,0 +1,37 @@
+.srw__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.srw__heading {
+  font-style: italic;
+}
+
+.srw__item {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  border-bottom: 1px dotted var(--black-color);
+}
+
+.srw__item:last-of-type {
+  border-bottom: none;
+}
+
+.srw__left {
+  flex: 0.4;
+}
+
+.srw__middle {
+  flex: 0.1;
+}
+
+.srw__middle img {
+  height: 16px;
+  width: 16px;
+}
+
+.srw__right {
+  flex: 0.5;
+}
