@@ -93,10 +93,17 @@ export async function deleteAllExpiredPromotions(
     method: 'delete',
     token: token,
   });
+  if (response && response.ok) {
+    return SUCCESS;
+  }
   if (response && response.body) {
     return response.body;
   }
-  return { code: response.code || 0, message: '', messages: [] };
+  return {
+    code: 1,
+    message: `An unexpected error occurred (${response.code || 0})`,
+    messages: [],
+  };
 }
 
 export async function deleteExpiredPromotions(
@@ -109,10 +116,17 @@ export async function deleteExpiredPromotions(
       method: 'delete',
       token: token,
     });
+    if (response && response.ok) {
+      return SUCCESS;
+    }
     if (response && response.body) {
       return response.body;
     }
-    return SUCCESS;
+    return {
+      code: 1,
+      message: `An unexpected error occurred (${response.code || 0})`,
+      messages: [],
+    };
   }
   return { code: 1, message: 'Invalid product id', messages: [] };
 }

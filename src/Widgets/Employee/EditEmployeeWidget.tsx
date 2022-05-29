@@ -29,9 +29,14 @@ import { IApiResponse } from '../../Interfaces/IApiResponse';
 type Props = {
   user: IUserModel | null;
   setSelectedUser: Dispatch<SetStateAction<IUserModel | null>>;
+  onSave: () => void;
 };
 
-export default function EditEmployeeWidget({ user, setSelectedUser }: Props) {
+export default function EditEmployeeWidget({
+  user,
+  setSelectedUser,
+  onSave,
+}: Props) {
   const [firstName, setFirstName] = useState<string>('');
   const [lastName, setLastName] = useState<string>('');
   const [displayName, setDisplayName] = useState<string>('');
@@ -88,6 +93,7 @@ export default function EditEmployeeWidget({ user, setSelectedUser }: Props) {
       if (result.ok) {
         setSelectedUser(null);
         setAlert('User profile updated successfully', 'info');
+        onSave();
       } else {
         setAlert(
           'Update failed: ' + (result.body as IApiResponse)?.message,

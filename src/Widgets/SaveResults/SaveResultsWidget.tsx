@@ -5,7 +5,7 @@ type Props = {
   results: ISaveResult[];
 };
 
-export function SaveResultsWidget({ results }: Props) {
+export default function SaveResultsWidget({ results }: Props) {
   function getIcon(success: boolean): string {
     return success ? '/images/checkmark-32.png' : '/images/clear-32.png';
   }

@@ -5,6 +5,22 @@
   gap: 10px;
 }
 
+.mp__bannercontainer {
+  padding: 10px 0;
+  border: 3px solid var(--base-color);
+  border-radius: 10px;
+  background-color: var(--yellow3);
+  color: var(--black-color);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 1rem;
+}
+
+.mp__bannertext {
+  text-align: center;
+  font-weight: 700;
+}
+
 .mp__menuitem {
   height: 200px;
   border: 1px solid var(--dark-color);

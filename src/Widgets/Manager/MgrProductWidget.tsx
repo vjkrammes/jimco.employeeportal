@@ -5,6 +5,7 @@ import { IProduct } from '../../Interfaces/IProduct';
 import { toCurrency } from '../../Services/tools';
 import { getHex } from '../../Services/ColorService';
 import CategoryNameWidget from '../Category/CategoryNameWidget';
+import AgeBadge from '../Badges/AgeBadge';
 import './MgrProductWidget.css';
 
 type Props = {
@@ -44,6 +45,7 @@ export default function MgrProductWidget({
           >
             <div style={{ marginLeft: '5px' }}>{product.vendor!.name}</div>
             <div>{product.name}</div>
+            <AgeBadge age={product.ageRequired} prefix="mpw__ab" />
             <div className={`mpw__price ${priceClass}`}>
               {toCurrency(price)}
             </div>

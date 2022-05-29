@@ -1,0 +1,216 @@
+.ep__body {
+  display: grid;
+  grid-template-rows: repeat(3, 200px);
+  grid-template-columns: repeat(5, 150px);
+  grid-template-areas:
+    'note note note note note'
+    'srch srch srch pinb pinb'
+    'edit edit edit pinb pinb';
+  column-gap: 5px;
+  grid-gap: 5px;
+}
+
+#createmodal {
+  max-width: 600px;
+}
+
+.ce__rolelist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ce__tick {
+  margin-left: 0;
+  margin-right: 10px;
+}
+
+.ep__bordered {
+  border: 1px solid var(--black-color);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ep__noteblock {
+  grid-area: note;
+  background-color: var(--light-color-faded);
+}
+
+.ep__searchblock {
+  grid-area: srch;
+  background-color: var(--light-accent-faded);
+  overflow: auto;
+}
+
+.ep__editblock {
+  grid-area: edit;
+  background-color: var(--dark-accent-faded);
+}
+
+.ep__sb__formitem {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.ep__sb__formlabel {
+  font-weight: 700;
+}
+
+.ep__sb__forminput {
+  flex: 1;
+}
+
+.ep__sb__formbutton {
+  display: flex;
+  align-items: center;
+  padding: 1px 3px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.ep__sb__formbutton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ep__sb__formbutton:hover {
+  background-color: var(--light-color);
+  color: var(--white-color);
+}
+
+.ep__sb__formbutton span {
+  display: flex;
+  align-items: center;
+}
+
+.ep__sb__nomatches {
+  text-align: center;
+  font-style: italic;
+  margin-top: 3.5rem;
+}
+
+.ep__pinblock {
+  grid-area: pinb;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-color);
+  width: 100%;
+}
+
+.ep__pb__header {
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  background-color: var(--light-color);
+  color: var(--black-color);
+  border-bottom: 3px double var(--black-color);
+}
+
+.ep__pb__heading {
+  flex: 1;
+}
+
+.ep__pb__button {
+  justify-self: flex-end;
+  flex: 0;
+  padding: 1px 3px;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  font-size: 0.6rem;
+  margin-left: 3px;
+  cursor: pointer;
+}
+
+.ep__pb__button:hover {
+  background-color: var(--light-color);
+  color: var(--black-color);
+}
+
+.ep__pb__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ep__pb__button span {
+  display: flex;
+  gap: 3px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.ep__pb__pinlist {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.ep__pb__nopinned {
+  margin-top: 9rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.ep__pb__footer {
+  padding-top: 3px;
+  border-top: 3px double var(--black-color);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+}
+
+.ep__pb__groupinput {
+  width: 100%;
+}
+
+.ep__pb__footerbuttons {
+  flex: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.ep__dialog {
+  border: 3px solid var(--black-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px var(--dark-color);
+  min-width: 500px;
+}
+
+.ep__dialog::backdrop {
+  background-color: rgba(0, 40, 128, 0.25);
+}
+
+.prdbody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+}
+
+.prdmessages {
+  width: 100%;
+}
+
+.prdheading {
+  font-weight: 700;
+}
+
+.prdclosebutton {
+  justify-self: flex-end;
+}

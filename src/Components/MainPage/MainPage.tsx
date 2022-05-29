@@ -2,27 +2,44 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth0 } from '@auth0/auth0-react';
 import { useUser } from '../../Contexts/UserContext';
+import { useAlert } from '../../Contexts/AlertContext';
 import { IAlertIdentity } from '../../Interfaces/IAlertIdentity';
 import { IAlertResponse } from '../../Interfaces/IAlertResponse';
 import { getAlerts } from '../../Services/AlertService';
+import { getSettings, updateSettings } from '../../Services/SettingsService';
+import { ISettingsModel } from '../../Interfaces/ISettingsModel';
+import AlertSummaryWidget from '../../Widgets/Alert/AlertSummaryWidget';
+import BannerWidget from '../../Widgets/Banner/BannerWidget';
 import MenuWidget from '../../Widgets/Menu/MenuWidget';
 import SearchWidget from '../../Widgets/Search/SearchWidget';
 import SkuSearchWidget from '../../Widgets/Search/SkuSearchWidget';
-import AlertSummaryWidget from '../../Widgets/Alert/AlertSummaryWidget';
 import './MainPage.css';
 
 export default function MainPage() {
   const [alertResponse, setAlertResponse] = useState<IAlertResponse | null>(
     null,
   );
+  const [settings, setSettings] = useState<ISettingsModel | null>(null);
   const { isLoading, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const { isValid, user, isManagerPlus, isAdmin, isJimCo } = useUser();
+  const { setAlert } = useAlert();
   const navigate = useNavigate();
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
       navigate('/Home');
     }
   }, [isLoading, isAuthenticated, navigate]);
+  useEffect(() => {
+    async function doGetSettings() {
+      const settings = await getSettings();
+      if (settings && settings.banner) {
+        setSettings(settings);
+      } else {
+        setSettings(null);
+      }
+    }
+    doGetSettings();
+  }, []);
   useEffect(() => {
     async function doGetAlerts() {
       if (isValid && user) {
@@ -45,8 +62,73 @@ export default function MainPage() {
     }
     doGetAlerts();
   }, [user, isValid, getAccessTokenSilently]);
+  async function saveBanner(text: string) {
+    if (settings) {
+      const newsettings: ISettingsModel = {
+        ...settings,
+        banner: text,
+      };
+      const result = await updateSettings(
+        newsettings,
+        await getAccessTokenSilently(),
+      );
+      if (
+        result.code === 0 &&
+        !result.message &&
+        (!result.messages || result.messages.length === 0)
+      ) {
+        setSettings(newsettings);
+        setAlert('Banner updated', 'info');
+      } else {
+        if (result.message) {
+          setAlert(result.message, 'error', 5000);
+        }
+      }
+    } else {
+      setAlert(
+        'Failed to load system settings, cannot update Banner',
+        'error',
+        5000,
+      );
+    }
+  }
+  async function clearBanner() {
+    if (settings) {
+      const newsettings = {
+        ...settings,
+        banner: '',
+      };
+      const result = await updateSettings(
+        newsettings,
+        await getAccessTokenSilently(),
+      );
+      if (
+        result.code === 0 &&
+        !result.message &&
+        (!result.messages || result.messages.length === 0)
+      ) {
+        setSettings(newsettings);
+        setAlert('Banner removed', 'info');
+      } else {
+        if (result.message) {
+          setAlert(result.message, 'error', 5000);
+        }
+      }
+    } else {
+      setAlert(
+        'Failed to load system settings, cannot update Banner',
+        'error',
+        5000,
+      );
+    }
+  }
   return (
     <div className="container">
+      {settings && settings.banner && (
+        <div className="mp__bannercontainer">
+          <div className="mp__bannertext">{settings.banner}</div>
+        </div>
+      )}
       <div className="content">
         <div className="mainpage">
           {alertResponse &&
@@ -145,6 +227,26 @@ export default function MainPage() {
                   >
                     <img src="/images/vendors.png" alt="Vendors" />
                   </Link>
+                </MenuWidget>
+              </div>
+              <div className="mp__menuitem">
+                <MenuWidget heading="Groups">
+                  <Link
+                    to="/Groups"
+                    style={{ marginBottom: '5px' }}
+                    title="Groups"
+                  >
+                    <img src="/images/groups.png" alt="groups" />
+                  </Link>
+                </MenuWidget>
+              </div>
+              <div className="mp__menuitem">
+                <MenuWidget heading="Banner">
+                  <BannerWidget
+                    banner={settings?.banner || ''}
+                    onSet={saveBanner}
+                    onRemove={clearBanner}
+                  />
                 </MenuWidget>
               </div>
             </>

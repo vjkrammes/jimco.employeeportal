@@ -1,0 +1,79 @@
+.promopage__headerbuttons {
+  grid-row: 1 / 1;
+  grid-column: 10 / 10;
+  justify-self: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.promopage__product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px double var(--dark-color);
+}
+
+.promopage__producttext {
+  font-weight: 700;
+  font-size: 125%;
+}
+
+.promopage__pc__header {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 3px double var(--dark-color);
+  padding-bottom: 1rem;
+}
+
+.promopage__pc__heading {
+  grid-column: 1 / -1;
+  grid-row: 1 / 1;
+  font-weight: 700;
+  font-size: 125%;
+  text-align: center;
+}
+
+.promopage__noitemsfound {
+  margin-top: 5rem;
+  text-align: center;
+  font-size: 150%;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.promopage__pc__createbutton {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+  justify-self: flex-start;
+}
+
+.promopage__pc__deletebutton {
+  grid-row: 1 / 1;
+  grid-column: 10 / 10;
+  justify-self: flex-end;
+}
+
+.promopage__formheader {
+  padding-block: 1rem;
+  border-bottom: 3px double var(--dark-color);
+}
+
+.promopage__formheading {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 125%;
+}
+
+.promopage__buttoncontainer {
+  margin-top: 1rem;
+}

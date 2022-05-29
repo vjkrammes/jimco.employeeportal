@@ -1,0 +1,79 @@
+.vp__pagercontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vp__pc__searchform {
+  flex: 1;
+}
+
+.vp__pc__form {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.vp__pc__f__input {
+  flex: 1;
+}
+
+/* Edit Form Styles */
+
+.vp__ev__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vp__ev__header {
+  border-bottom: 3px double var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.vp__ev__heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.vp__ev__body form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vp__ev__formitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.vp__ev__formlabel {
+  min-width: 95px;
+}
+
+.vp__ev__forminput {
+  flex: 1;
+}
+
+.vp__ev__checkbox {
+  max-width: 13px;
+  margin-left: 0;
+}
+
+.vp__ev__buttoncontainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.vp__ev__button {
+  width: 85px;
+}

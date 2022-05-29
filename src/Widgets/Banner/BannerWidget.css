@@ -1,0 +1,23 @@
+.bw__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+}
+
+.bw__buttons {
+  flex: 0;
+  margin-bottom: 3px;
+}
+
+.bw__text {
+  width: 100%;
+  flex: 1;
+}
+
+.bw__textarea {
+  resize: none;
+  width: 100%;
+  height: 100%;
+}

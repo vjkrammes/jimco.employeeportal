@@ -1,0 +1,69 @@
+.cp__addcontainer {
+  margin-bottom: 1rem;
+  border: 1px solid var(--black-color);
+  border-radius: 5px;
+  padding: 1rem 10px;
+}
+
+.cp__formbody {
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:
+    'naml namv namv namv namv namv'
+    'imgl imgv imgv bckl bckv bckv'
+    'isal isav isav arql arqv arqv'
+    'brow brow brow brow brow brow';
+  row-gap: 10px;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.cp__namelabel {
+  grid-area: naml;
+}
+
+.cp__nameinput {
+  grid-area: namv;
+}
+
+.cp__imagelabel {
+  grid-area: imgl;
+}
+
+.cp__iconselect {
+  grid-area: imgv;
+}
+
+.cp__backlabel {
+  grid-area: bckl;
+}
+
+.cp__backselect {
+  grid-area: bckv;
+}
+
+.cp__iarlabel {
+  grid-area: isal;
+}
+
+.cp__iarcheckbox {
+  grid-area: isav;
+  justify-self: flex-start;
+}
+
+.cp__arlabel {
+  grid-area: arql;
+}
+
+.cp__arinput {
+  grid-area: arqv;
+}
+
+.cp__formbuttoncontainer {
+  grid-area: brow;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}

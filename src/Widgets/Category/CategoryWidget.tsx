@@ -18,7 +18,7 @@ type Props = {
   category: ICategory;
   selectedCategory: ICategory | null;
   setSelectedCategory: Dispatch<SetStateAction<ICategory | null>>;
-  updateCategories: () => null;
+  updateCategories: () => void;
 };
 
 type FormData = {

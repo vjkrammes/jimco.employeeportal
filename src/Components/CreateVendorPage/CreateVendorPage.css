@@ -1,0 +1,52 @@
+.cvp__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cvp__formitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cvp__formlabel {
+  width: 120px;
+}
+
+.cvp__forminput {
+  flex: 1;
+}
+
+.cvp__checkbox {
+  max-width: 16px;
+  margin-left: 0;
+}
+
+.cvp__m__heading {
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px double var(--dark-color);
+}
+
+.cvp__m__messages {
+  margin-bottom: 1rem;
+}
+
+.cvp__m__messages div {
+  margin-left: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cvp__m__messages div:last-of-type {
+  margin-bottom: 0;
+}
+
+.cvp__m__buttoncontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

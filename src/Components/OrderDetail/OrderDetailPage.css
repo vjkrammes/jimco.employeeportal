@@ -1,0 +1,162 @@
+.odp__orderheader {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    'idlb idvl idvl idvl idvl prcl pric pric pric prnt'
+    'nlab name name name name emlb emla emla emla emla'
+    'ad1l add1 add1 add1 add1 add1 add1 add1 add1 add1'
+    'ad2l add2 add2 add2 add2 add2 add2 add2 add2 add2'
+    'clab city city city city sttl stte stte stte stte'
+    'pclb pstc pstc pstc pstc pinl pinv pinv pinv pinv'
+    'cdlb cdvl cdvl cdvl cdvl sdlb sdvl sdvl sdvl sdvl'
+    'stal stat stat stat stat arql areq areq areq areq';
+  align-items: center;
+  gap: 5px;
+  border-bottom: 3px double var(--base-color);
+}
+
+.odp__label {
+  font-weight: 700;
+}
+
+.odp__value {
+  font-style: italic;
+}
+
+.odp__idlabel {
+  grid-area: idlb;
+}
+
+.odp__idvalue {
+  grid-area: idvl;
+}
+
+.odp__pricelabel {
+  grid-area: prcl;
+}
+
+.odp__price {
+  grid-area: pric;
+}
+
+.odp__printcontainer {
+  grid-area: prnt;
+  justify-self: flex-end;
+}
+
+#printbutton {
+  color: red !important;
+}
+.odp__namelabel {
+  grid-area: nlab;
+}
+
+.odp__namevalue {
+  grid-area: name;
+}
+
+.odp__emaillabel {
+  grid-area: emlb;
+}
+
+.odp__emailvalue {
+  grid-area: emla;
+}
+
+.odp__addr1label {
+  grid-area: ad1l;
+}
+
+.odp__addr1value {
+  grid-area: add1;
+}
+
+.odp__addr2label {
+  grid-area: ad2l;
+}
+
+.odp__addr2value {
+  grid-area: add2;
+}
+
+.odp__citylabel {
+  grid-area: clab;
+}
+
+.odp__cityvalue {
+  grid-area: city;
+}
+
+.odp__statelabel {
+  grid-area: sttl;
+}
+
+.odp__statevalue {
+  grid-area: stte;
+}
+
+.odp__pclabel {
+  grid-area: pclb;
+}
+
+.odp__pcvalue {
+  grid-area: pstc;
+}
+
+.odp__pinlabel {
+  grid-area: pinl;
+}
+
+.odp__pinvalue {
+  grid-area: pinv;
+}
+
+.odp__cdlabel {
+  grid-area: cdlb;
+}
+
+.odp__cdvalue {
+  grid-area: cdvl;
+}
+
+.odp__sdlabel {
+  grid-area: sdlb;
+}
+
+.odp__sdvalue {
+  grid-area: sdvl;
+}
+
+.odp__statlabel {
+  grid-area: stal;
+}
+
+.odp__statvalue {
+  grid-area: stat;
+}
+
+.odp__arlabel {
+  grid-area: arql;
+}
+
+.odp__arvalue {
+  grid-area: areq;
+}
+
+.odp__lineitemheader {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.odp__lineitems {
+  overflow-y: auto;
+}
+
+.odp__nolineitems {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 5rem;
+}

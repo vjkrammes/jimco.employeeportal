@@ -19,6 +19,12 @@
   border-bottom: 1px dotted var(--black-color);
 }
 
+.mpw__ab__icon {
+  height: 16px;
+  width: 16px;
+  align-self: center;
+}
+
 .mpw__price {
   font-weight: 700;
   flex: 1;

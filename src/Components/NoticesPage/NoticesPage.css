@@ -1,0 +1,141 @@
+.np__noalerts {
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-size: 150%;
+}
+
+.np__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.np__createbutton {
+  grid-row: 1 / 1;
+  grid-column: 9 / 10;
+  justify-self: flex-end;
+}
+
+/* delete cofirmation dialog */
+
+.np__dialog {
+  border: 3px solid var(--black-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px var(--dark-color);
+  max-width: 700px;
+  padding: 3rem;
+  min-width: 500px;
+}
+
+.np__dialog::backdrop {
+  background-color: rgba(0, 40, 128, 0.25);
+}
+
+.np__dd__body {
+  margin: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+}
+
+.np__dd__heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 1px solid var(--dark-color);
+}
+
+.np__dd__item {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid var(--dark-accent-faded);
+}
+
+.np__dd__label {
+  flex: 0.25;
+}
+
+.np__dd__value {
+  flex: 0.75;
+}
+
+.np__dd__audience {
+  display: grid;
+  grid-template-columns: repeat(4, 20px);
+  grid-template-rows: 1fr;
+}
+
+.np__dd__buttoncontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+
+/* Edit Dialog */
+
+.np__ed__container form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.np__ed__header {
+  border-bottom: 3px double var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.np__ed__heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.np__ed__formitem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.np__ed__formlabel {
+  flex: 0.25;
+}
+
+.np__ed__forminput {
+  flex: 0.75;
+}
+
+.np__ed__formtext {
+  resize: none;
+  height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.np__ed__buttoncontainer {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* style the notification container "outside" */
+
+.mnli__container {
+  border-bottom: 1px dotted var(--base-color);
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+.mnli__container:last-of-type {
+  border-bottom: none;
+}

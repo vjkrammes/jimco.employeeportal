@@ -1,0 +1,91 @@
+.pp__pagerbuttoncontent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.pp__pc__searchform {
+  flex: 1;
+}
+
+.pp__pc__form {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+}
+
+.pp__pc__f__input {
+  flex: 1;
+}
+
+/* Edit form styles */
+
+.pp__modal {
+  border: 3px solid var(--black-color);
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px var(--dark-color);
+  min-width: 800px;
+}
+
+.pp__modal::backdrop {
+  background-color: rgba(0, 80, 128, 0.25);
+}
+
+.pp__ep__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pp__ep__header {
+  border-bottom: 3px double var(--dark-color);
+  margin-bottom: 1rem;
+}
+
+.pp__ep__heading {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.pp__ep__body form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.pp__ep__formitem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.pp__ep__formlabel {
+  min-width: 120px;
+}
+
+.pp__ep__forminput {
+  flex: 1;
+}
+
+.pp__ep__textarea {
+  height: 100px;
+  resize: none;
+}
+
+.pp__ep__checkbox {
+  max-width: 16px;
+  margin-right: 0;
+}
+
+.pp__ep__buttoncontainer {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
