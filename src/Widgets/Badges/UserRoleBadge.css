@@ -1,0 +1,12 @@
+.urb__container {
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  align-items: center;
+}
+
+.urb__takespace {
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+}

@@ -3,6 +3,7 @@ import { IAlert } from '../../Interfaces/IAlert';
 import { alertIcon, alertLevel } from '../../Services/tools';
 import { getNameFromEmail } from '../../Services/UserService';
 import { useAuth0 } from '@auth0/auth0-react';
+import './AlertListItemWidget.css';
 
 type Props = {
   alert: IAlert;

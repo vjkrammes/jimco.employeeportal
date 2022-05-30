@@ -1,0 +1,28 @@
+.guw__container {
+  display: grid;
+  grid-template-columns: 75px minmax(0, 1fr) 32px;
+  grid-template-rows: 1fr;
+  grid-template-areas: 'icon name btns';
+  column-gap: 5px;
+  align-items: center;
+  margin-bottom: 5px;
+  border: 1px solid var(--base-color);
+  border-radius: 5px;
+}
+
+.guw__badge {
+  grid-area: icon;
+  justify-self: flex-end;
+}
+
+.guw__name {
+  grid-area: name;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.guw__button {
+  grid-area: btns;
+  justify-self: flex-end;
+}

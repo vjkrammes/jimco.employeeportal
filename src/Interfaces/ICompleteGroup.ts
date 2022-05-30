@@ -1,8 +1,7 @@
 import { IUserModel } from './IUserModel';
 
-export interface IGroup {
+export interface ICompleteGroup {
   id: string;
   name: string;
-  userId: string;
   users: IUserModel[];
 }

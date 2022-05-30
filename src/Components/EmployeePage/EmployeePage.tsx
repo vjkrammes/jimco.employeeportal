@@ -170,29 +170,29 @@ export default function EmployeePage({ setEmployeeList }: Props) {
   async function saveToGroup() {
     setSaveResults([]);
     if (pinnedEmployees && pinnedEmployees.length > 0) {
+      let newresults: ISaveResult[] = [];
       for (let i = 0; i < pinnedEmployees.length; i++) {
         const result = await addUserToGroup(
-          pinnedEmployees[i].identifier,
+          pinnedEmployees[i].id,
           groupName,
           token,
         );
         if (!result.ok) {
           const apiresult = result.body as IApiResponse;
-          setSaveResults([
-            ...saveResults,
-            {
-              user: pinnedEmployees[i].displayName,
-              success: false,
-              error: apiresult.message,
-            },
-          ]);
+          newresults.push({
+            user: pinnedEmployees[i].displayName,
+            success: false,
+            error: apiresult.message,
+          });
         } else {
-          setSaveResults([
-            ...saveResults,
-            { user: pinnedEmployees[i].displayName, success: true, error: '' },
-          ]);
+          newresults.push({
+            user: pinnedEmployees[i].displayName,
+            success: true,
+            error: '',
+          });
         }
       }
+      setSaveResults(newresults);
       // @ts-ignore
       savedialog.showModal();
     }

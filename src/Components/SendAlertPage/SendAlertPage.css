@@ -1,0 +1,38 @@
+.sap__formbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid var(--black-color);
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  gap: 1rem;
+}
+
+.formlabel {
+  width: 200px;
+}
+
+.sap__formheader {
+  text-align: center;
+  font-weight: 700;
+  font-size: 125%;
+  border-bottom: 1px dotted var(--base-color);
+  margin-bottom: 1rem;
+}
+
+.sap__recipients {
+  margin-top: 1rem;
+  border: 1px solid var(--dark-color);
+  border-radius: 10px;
+  background-color: var(--light-color-faded);
+  padding: 1rem;
+}
+
+.sap__r__heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.sap__r__list {
+  font-style: italic;
+}

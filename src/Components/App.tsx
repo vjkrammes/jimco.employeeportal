@@ -6,10 +6,12 @@ import AboutPage from './AboutPage/AboutPage';
 import AlertPage from './AlertPage/AlertPage';
 import ArchitecturePage from './AboutPage/ArchitecturePage';
 import CategoryPage from './CategoryPage/CategoryPage';
+import CheckOutPage from './CheckOutPage/CheckOutPage';
 import CreateProductPage from './CreateProductPage/CreateProductPage';
 import CreateVendorPage from './CreateVendorPage/CreateVendorPage';
 import DisclaimerPage from './DisclaimerPage/DisclaimerPage';
 import EmployeePage from './EmployeePage/EmployeePage';
+import GroupPage from './GroupPage/GroupPage';
 import HomePage from './HomePage/HomePage';
 import LogsPage from './LogsPage/LogsPage';
 import MainPage from './MainPage/MainPage';
@@ -21,6 +23,7 @@ import ProfilePage from './ProfilePage/ProfilePage';
 import PromotionsPage from './PromotionsPage/PromotionsPage';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import SearchPage from './SearchPage/SearchPage';
+import SendAlertPage from './SendAlertPage/SendAlertPage';
 import VendorPage from './VendorPage/VendorPage';
 // providers
 import { AlertProvider } from '../Contexts/AlertContext';
@@ -82,6 +85,15 @@ function App() {
                   }
                 />
                 <Route
+                  path="/Checkout"
+                  element={
+                    <>
+                      <AlertPopup />
+                      <CheckOutPage />
+                    </>
+                  }
+                />
+                <Route
                   path="/CreateProduct"
                   element={
                     <>
@@ -106,6 +118,15 @@ function App() {
                     <>
                       <AlertPopup />
                       <EmployeePage setEmployeeList={setEmployeeList} />
+                    </>
+                  }
+                />
+                <Route
+                  path="/Groups"
+                  element={
+                    <>
+                      <AlertPopup />
+                      <GroupPage />
                     </>
                   }
                 />
@@ -187,6 +208,15 @@ function App() {
                   element={<SearchPage />}
                 />
                 <Route path="/Search/:text" element={<SearchPage />} />
+                <Route
+                  path="/SendAlert"
+                  element={
+                    <>
+                      <AlertPopup />
+                      <SendAlertPage employeeList={employeeList} />
+                    </>
+                  }
+                />
                 <Route
                   path="/Vendors"
                   element={

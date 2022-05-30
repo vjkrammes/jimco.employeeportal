@@ -1,0 +1,19 @@
+.grpw__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-inline: 5px;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+.grpw__name {
+  flex: 1;
+}
+
+.grpw__members {
+  flex: 0;
+  font-style: italic;
+}
