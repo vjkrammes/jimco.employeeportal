@@ -8,6 +8,7 @@ type Props = {
   onClick: (user: IUserModel) => void;
   buttonTitle: string;
   buttonContent: JSX.Element | string;
+  buttonDisabled?: boolean;
   height?: string | undefined;
 };
 
@@ -17,6 +18,7 @@ export default function GroupUserWidget({
   onClick,
   buttonTitle,
   buttonContent,
+  buttonDisabled,
   height,
 }: Props) {
   return (
@@ -32,7 +34,12 @@ export default function GroupUserWidget({
       )}
       <div className="guw__name">{user.displayName}</div>
       <div className="guw__button">
-        <button type="button" className="squarebutton" title={buttonTitle}>
+        <button
+          type="button"
+          className="squarebutton"
+          title={buttonTitle}
+          disabled={buttonDisabled || false}
+        >
           <span>{buttonContent}</span>
         </button>
       </div>

@@ -310,11 +310,20 @@ form {
   margin-inline: 0px;
 }
 
+.forminput:disabled {
+  cursor: not-allowed;
+  background-color: var(--gray5);
+}
+
 textarea {
   resize: none;
   height: 100px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+textarea:disabled {
+  cursor: not-allowed;
 }
 
 /* buttons */

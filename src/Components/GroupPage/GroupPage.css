@@ -4,6 +4,68 @@
   height: 100%;
 }
 
+.gp__warningbanner {
+  width: 100%;
+  text-align: center;
+  background-color: var(--yellow4);
+  color: var(--red4);
+  border: 1px solid var(--black-color);
+  border-radius: 10px;
+  margin-bottom: 5px;
+}
+
+#cd__modal,
+#rg__modal {
+  max-width: 500px;
+}
+
+#sr__modal,
+#su__modal {
+  max-width: 600px;
+}
+
+.gp__sr__resultscontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gp__sr__result {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gp__su__nousers,
+.gp__sr__noresults {
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.gp__rg__container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gp__su__title,
+.gp__rg__title,
+.gp__cd__title,
+.gp__sr__titlem {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gp__cd__message {
+  font-style: italic;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .gp__container {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -14,11 +76,18 @@
 
 .gp__column {
   width: 100%;
-  height: 750px;
+  height: 600px;
   background-color: var(--light-accent-faded);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@media (min-height: 900px) {
+  .gp__column {
+    height: 750px;
+  }
 }
 
 .gp__columnheader {
