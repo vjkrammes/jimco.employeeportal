@@ -13,8 +13,8 @@ const onRedirectCallback = (appState) => {
 };
 
 const providerConfig = {
-  domain: authSettings.domain,
-  clientId: authSettings.client_id,
+  domain: authSettings.domain || process.env.REACT_APP_AUTH0_DOMAIN,
+  clientId: authSettings.client_id || process.env.REACT_APP_AUTH0_CLIENT_ID,
   audience: authSettings.audience,
   redirectUri: authSettings.redirect_uri,
   onRedirectCallback,
