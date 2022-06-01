@@ -26,7 +26,7 @@ export default function Header() {
             <Spinner /> Loading...
           </span>
         )}
-        {!isLoading && !isValid && (
+        {!isLoading && isAuthenticated && !isValid && (
           <span>
             <Spinner /> Loading&nbsp;User...
           </span>

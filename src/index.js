@@ -19,8 +19,6 @@ const providerConfig = {
   redirectUri: authSettings.redirect_uri,
   onRedirectCallback,
 };
-console.log(providerConfig.domain);
-console.log(providerConfig.clientId);
 
 const container = document.getElementById('root');
 const root = createRoot(container);
