@@ -171,7 +171,7 @@ export default function AboutPage() {
               rel="noreferrer"
             >
               {' '}
-              auth0-spa-js
+              @auth0/auth0-react
             </a>{' '}
             a JavaScript library used to interact with Auth0 for authentication.
           </li>
@@ -224,24 +224,6 @@ export default function AboutPage() {
               ADO.Net
             </a>
             , used to get entity objects into and out of the database.
-          </li>
-          <li className="ap__aboutitem">
-            <a
-              href="https://www.newtonsoft.com/json"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Json.NET
-            </a>
-            , a{' '}
-            <a
-              href="https://www.json.org/json-en.html"
-              target="_blank"
-              rel="noreferrer"
-            >
-              JSON
-            </a>{' '}
-            library.
           </li>
         </ul>
       </div>

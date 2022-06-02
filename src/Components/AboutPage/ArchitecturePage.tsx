@@ -21,7 +21,7 @@ export default function ArchitecturePage() {
         <button
           className="secondarybutton headerbutton-right"
           type="button"
-          onClick={() => navigate('/Home')}
+          onClick={() => navigate('/')}
         >
           <span>
             <MdHome /> Home

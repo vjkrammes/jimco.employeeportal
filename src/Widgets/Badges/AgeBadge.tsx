@@ -32,7 +32,7 @@ export default function AgeBadge({
       <div className={`${pfx}__icon`}>
         <img
           src={fn}
-          alt={`Age {num} or older required`}
+          alt={`Age ${age} or older required`}
           title={`${age}+ Required`}
         />
       </div>
