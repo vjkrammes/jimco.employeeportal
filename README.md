@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# ![VJK Solutions](https://vjk.solutions/images/logo-64.png) JimCo Retailers Demonstration App ![JimCo Logo](https://vjk.solutions/images/jimcologo-64.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The **JimCo Retailers** demonstration application is a group of four related web applications. It consists of the following parts:
 
-## Available Scripts
+1. A back end API written in C# using ASP.Net Core.
+2. A Retail web site aimed at online shoppers written using React
+3. An Employee Portal web site aimed at internal employees written using React
+4. A Vendor Portal web site aimed at Vendors who distribute products to the store written using React
 
-In the project directory, you can run:
+All four web sites are hosted on Microsoft Azure. The code repositories are hosted on [GitHub](https://github.com) (see below for links to the individual repositories, or click [here](https://github.com/vjkrammes) to see them all), and CI/CD is handled by Microsoft Azure DevOps.
 
-### `npm start`
+## The API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Repository [here](https://github.com/vjkrammes/JimCo.api)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The API is the back end for the three front end web sites. It is written in C# version 10 using ASP.Net Core / .Net Core version 6. It is architected in a multi-layer approach as shown below:
 
-### `npm test`
+| Layer Name  | Function                                                                  | Type          |
+| ----------- | ------------------------------------------------------------------------- | ------------- |
+| Data Access | The repository layer that handles access to the database                  | Class Library |
+| Services    | The business logic layer that sits between the API and Data Access Layers | Class Library |
+| API         | The web-facing API using minimal endpoints                                | Web API       |
+| Models      | The DTO models shared between the API and Services Layers                 | Class Library |
+| Common      | Common classes, Attributes, Enumerations, extension methods, etc          | Class Library |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In addition to the above, the API uses [Dapper](https://github.com/DapperLib/Dapper) to access a Microsoft SQL / Azure SQL database.
 
-### `npm run build`
+## The Retail Site
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Repository [here](https://github.com/vjkrammes/jimco.retailsite)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Retail site is written in **TypeScript** using **React** functions / hooks, _React version 18_ and _React Router version 6.3_. It is responsive down to 375 pixels. It does not currently use any authorization or authentication (though this may change).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## The Employee Portal (This project)
 
-### `npm run eject`
+Repository [here](https://github.com/vjkramems/jimco.employeeportal)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The Employee Portal is written in **TypeScript** using **React** functions / hooks, _React version 18_ and _React Router version 6.3_. It is designed specifically for in-store use on tablets or desktop computers and is therefore designed for a minimum screen size of 1024 x 768 pixels. [Auth0](https://auth0.com) is used for authorization, and the internal database is used for role-based authentication.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## The Vendor Portal
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Repository [here](https://github.com/vjkrammes/jimco.vendorportal)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The vendor portal is written in **TypeScript** using **React** functions / hooks, _React version 18_ and _React Router version 6.3_. It is designed specifically for desktop computers and therefore is designed for a minimum screen resolution of 1024 x 768 pixels. [Auth0](https://auth0.com) is used for Authentication, and the internal database is used for role-based authorization.
 
-## Learn More
+## External Dependencies
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+For the API:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. [AspNetCoreRateLimit](https://github.com/stefanprodan/AspNetCoreRateLimit) Used to rate limit requests
+2. [Hashids.net](https://hashids.org/net/) Used to obfuscate Ids sent to end users
+3. [Dapper](https://github.com/DapperLib/Dapper) Used to access the database
+4. [Json.NET](https://www.json.org/json-en.html) a JSON library for .Net
 
-### Code Splitting
+For the Web Sites, the following NPM packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. _react, react-dom, react-router-dom, react-icons_
+2. _@mui/material_, used for alerts
+3. _@auth0/auth0-react_, used to interact with Auth0
+4. _uuid_, used to generate uuids
